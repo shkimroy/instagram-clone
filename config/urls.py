@@ -5,36 +5,26 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from rest_framework_jwt.views import obtain_jwt_token
+from instagram import views
 
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
-    path(
-        'rest-auth/',
-        include("rest_auth.urls")
-    ),
-    path(
-        "rest-auth/registration/",
-        include("rest_auth.registration.urls")
-    ),
-    path(
-        "users/",
-        include("instagram.users.urls", namespace="users"),
-    ),
-    path(
-        "images/",
-        include("instagram.images.urls", namespace="images")
-    ),
-    path(
-        "notifications/",
-        include("instagram.notifications.urls", namespace="notifications")
-    ),
+    path('rest-auth/', include("rest_auth.urls")),
+    path("rest-auth/registration/", include("rest_auth.registration.urls")),
+    path("users/", include("instagram.users.urls", namespace="users")),
+    path("images/", include("instagram.images.urls", namespace="images")),
+    path("notifications/", include("instagram.notifications.urls", namespace="notifications")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
+
+urlpatterns += [
+    path("", views.ReactAppView.as_view())
+]
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
