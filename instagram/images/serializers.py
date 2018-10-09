@@ -72,7 +72,8 @@ class ImageSerializer(TaggitSerializer, serializers.ModelSerializer):
       'creator',
       'tags',
       'natural_time',
-      'is_liked'
+      'is_liked',
+      'is_vertical'
     )
   
   # finding like what i liked.

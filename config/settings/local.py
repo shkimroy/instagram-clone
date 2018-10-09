@@ -8,11 +8,14 @@ DEBUG = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = env('DJANGO_SECRET_KEY', default='c536jEQUxQ6mbRQJiEXJ92qlNd96l1hFAuWhIgizrNUCqDG0gkVSGlXaBfP1iZg9')
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = [
-    "localhost",
-    "0.0.0.0",
-    "127.0.0.1",
-]
+# ALLOWED_HOSTS = [
+#     "localhost",
+#     "0.0.0.0",
+#     "127.0.0.1",
+#     "c9421745.ngrok.io"
+# ]
+ALLOWED_HOSTS = ["*"] # Allow every http hosts
+
 
 # CACHES
 # ------------------------------------------------------------------------------

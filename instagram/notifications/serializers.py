@@ -6,7 +6,7 @@ from instagram.images import serializers as image_serializers
 class NotificationSerializer(serializers.ModelSerializer):
 
   creator = user_serializers.ListUserSerializer()
-  image = image_serializers.SmallImageSerializer()
+  image = image_serializers.ImageSerializer()
 
   class Meta:
     model = models.Notification
