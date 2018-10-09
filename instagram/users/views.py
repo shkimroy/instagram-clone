@@ -67,7 +67,8 @@ class UserProfile(APIView):
         if found_user is None:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
-        serializer = serializers.UserProfileSerializer(found_user);
+        serializer = serializers.UserProfileSerializer(found_user, context={'request': request});
+
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
     def put(self, request, username, format=None):
@@ -83,7 +84,7 @@ class UserProfile(APIView):
 
         else:
             
-            serializer = serializers.UserProfileSerializer(found_user, data=request.data, partial=True)
+            serializer = serializers.UserProfileSerializer(found_user, data=request.data, partial=True, context={'request': request})
 
             if serializer.is_valid():
                 serializer.save()
