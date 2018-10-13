@@ -1,12 +1,9 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
-
 pytz = "==2018.5"
 python-slugify = "==1.2.6"
 pillow = "==5.2.0"
@@ -39,12 +36,9 @@ djangorestframework-jwt = "*"
 django-taggit-serializer = "*"
 django-rest-auth = "*"
 django-cors-headers = "*"
-
+awsebcli = "*"
 
 [dev-packages]
 
-
-
 [requires]
-
 python_version = "3.6"
