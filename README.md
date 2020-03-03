@@ -1,3 +1,3 @@
-# instagram
+# Instagram
 
-Cloning IG with Python Django and React / React Native
+Cloning IG with Python Django and React
